@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details | Your Tickets.lk</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F74500',
+                        secondary: '#1F2937'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-primary text-2xl font-bold">
+                <span class="text-primary">your tickets.lk</span>
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html#events" class="text-gray-700 hover:text-primary transition-colors">Events</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                <a href="auth.html"
+                    class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">Login
+                    / Register</a>
+            </nav>
+            <!-- Mobile Navigation Toggle -->
+            <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                <button class="text-gray-700 hover:text-primary">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Event Details Section -->
+    <main class="pt-28 pb-20 bg-gray-50 min-h-screen">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 h-72 md:h-auto overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=rock%20concert%20with%20large%20crowd%2C%20professional%20stage%20lighting%2C%20energetic%20performance%2C%20high-quality%20professional%20photograph%20with%20clean%20background%2C%20modern%20venue%20with%20state-of-the-art%20equipment&width=600&height=400&seq=2&orientation=landscape"
+                            alt="Event Image" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="md:w-1/2 p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span
+                                    class="text-sm font-medium bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full">May
+                                    15, 2025</span>
+                                <span class="text-sm text-gray-500">8:00 PM</span>
+                            </div>
+                            <h1 class="text-3xl font-bold mb-2">Summer Rock Festival</h1>
+                            <div class="flex items-center mb-4 text-gray-600 text-sm">
+                                <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                    <i class="ri-map-pin-line"></i>
+                                </div>
+                                <span>Colombo Exhibition Center</span>
+                            </div>
+                            <p class="text-gray-700 mb-6">
+                                Experience the ultimate summer music extravaganza! Join us for an unforgettable night of live performances by top rock bands, amazing stage effects, and a vibrant crowd. Food stalls, merchandise, and more await you at the Colombo Exhibition Center.
+                            </p>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                            <span class="font-semibold text-gray-800 text-xl">$25 - $75</span>
+                            <button
+                                class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors text-lg font-semibold">Book
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Optionally, add more event info below -->
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Your Tickets.lk</h3>
+                    <p class="text-gray-400 mb-6">Your one-stop destination for booking tickets to the best events in
+                        Sri Lanka.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-facebook-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-twitter-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-line ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-linkedin-fill ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="index.html#events" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Event Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Concerts & Music</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Theater & Arts</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sports</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Festivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Workshops</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Exhibitions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Subscribe</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with the latest events and exclusive offers.</p>
+                    <div class="flex mb-4">
+                        <input type="email" placeholder="Your email address"
+                            class="w-full px-4 py-3 bg-gray-800 border-none text-white rounded-l focus:outline-none">
+                        <button
+                            class="bg-primary text-white px-4 py-3 rounded-r hover:bg-opacity-90 transition-colors whitespace-nowrap">Subscribe</button>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3">We Accept</h4>
+                        <div class="flex space-x-3">
+                            <div class="w-10 h-6 flex items-center justify-center bg-white rounded">
+                                <i class="ri-visa-fill text-blue-700 ri-lg"></i>
+                            </div>
+                            <div class="w-10 h-6 flex items-center justify-center bg-white rounded">
+                                <i class="ri-mastercard-fill text-red-500 ri-lg"></i>
+                            </div>
+                            <div class="w-10 h-6 flex items-center justify-center bg-white rounded">
+                                <i class="ri-paypal-fill text-blue-500 ri-lg"></i>
+                            </div>
+                            <div class="w-10 h-6 flex items-center justify-center bg-white rounded">
+                                <i class="ri-apple-fill text-gray-800 ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 Your Tickets.lk. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of
+                            Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Refund Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
