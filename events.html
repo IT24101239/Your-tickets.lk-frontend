@@ -47,8 +47,8 @@
             </a>
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="index.html#events" class="text-gray-700 hover:text-primary transition-colors">Events</a>
-                <a href="index.html#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors">Events</a>
+                <a href="about.html" class="text-gray-700 hover:text-primary transition-colors">About</a>
                 <a href="auth.html"
                     class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">Login
                     / Register</a>
@@ -62,43 +62,16 @@
         </div>
     </header>
     <!-- Event Details Section -->
-    <main class="pt-28 pb-20 bg-gray-50 min-h-screen">
+    <main class="pt-14 pb-20 bg-gray-50 min-h-screen">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-1/2 h-72 md:h-auto overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=rock%20concert%20with%20large%20crowd%2C%20professional%20stage%20lighting%2C%20energetic%20performance%2C%20high-quality%20professional%20photograph%20with%20clean%20background%2C%20modern%20venue%20with%20state-of-the-art%20equipment&width=600&height=400&seq=2&orientation=landscape"
-                            alt="Event Image" class="w-full h-full object-cover object-top">
-                    </div>
-                    <div class="md:w-1/2 p-8 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-3">
-                                <span
-                                    class="text-sm font-medium bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full">May
-                                    15, 2025</span>
-                                <span class="text-sm text-gray-500">8:00 PM</span>
-                            </div>
-                            <h1 class="text-3xl font-bold mb-2">Summer Rock Festival</h1>
-                            <div class="flex items-center mb-4 text-gray-600 text-sm">
-                                <div class="w-4 h-4 flex items-center justify-center mr-2">
-                                    <i class="ri-map-pin-line"></i>
-                                </div>
-                                <span>Colombo Exhibition Center</span>
-                            </div>
-                            <p class="text-gray-700 mb-6">
-                                Experience the ultimate summer music extravaganza! Join us for an unforgettable night of live performances by top rock bands, amazing stage effects, and a vibrant crowd. Food stalls, merchandise, and more await you at the Colombo Exhibition Center.
-                            </p>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                            <span class="font-semibold text-gray-800 text-xl">$25 - $75</span>
-                            <button
-                                class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors text-lg font-semibold">Book
-                                Now</button>
-                        </div>
-                    </div>
+
+            <!-- New All Events Section -->
+            <section id="all-events" class="py-10">
+                <h2 class="text-3xl font-bold mb-6 text-center">All Events</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="events-container">
+                    <!-- Event cards will be inserted here -->
                 </div>
-            </div>
-            <!-- Optionally, add more event info below -->
+            </section>
         </div>
     </main>
     <!-- Footer -->
@@ -190,6 +163,7 @@
         </div>
     </footer>
     <script src="scripts/app.js"></script>
+    <script src="scripts/events.js"></script>
 </body>
 
 </html>

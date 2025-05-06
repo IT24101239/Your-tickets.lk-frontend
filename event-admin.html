@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ...existing head code similar to index.html... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Admin - Your Tickets.lk</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#F74500', secondary: '#1F2937' },
+                    borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body class="bg-gray-100 font-inter">
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-md">
+            <div class="p-6">
+                <h1 class="text-2xl font-bold text-primary">Admin Panel</h1>
+            </div>
+            <nav class="mt-10">
+                <a href="dashboard-admin.html"
+                    class="block py-2.5 px-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
+                    <i class="ri-dashboard-line inline mr-2"></i> Dashboard
+                </a>
+                <a href="event-admin.html"
+                    class="block py-2.5 px-4 rounded bg-primary text-white transition duration-200">
+                    <i class="ri-calendar-line inline mr-2"></i> Events
+                </a>
+                <a href="#"
+                    class="block py-2.5 px-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
+                    <i class="ri-user-line inline mr-2"></i> Users
+                </a>
+                <a href="#"
+                    class="block py-2.5 px-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
+                    <i class="ri-settings-3-line inline mr-2"></i> Tickets
+                </a>
+                <!-- Logout button -->
+                <a href="index.html"
+                    class="block py-2.5 px-4 mt-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
+                    <i class="ri-logout-box-line inline mr-2"></i> Logout
+                </a>
+            </nav>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 p-10">
+            <header class="mb-8">
+                <h2 class="text-3xl font-bold text-secondary">Manage Events</h2>
+            </header>
+            <!-- Create Event Form -->
+            <section class="mb-10">
+                <h3 class="text-xl font-semibold mb-4">Add New Event</h3>
+                <form id="createEventForm" class="bg-white p-6 rounded shadow">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <input type="text" name="name" required placeholder="Event Name"
+                            class="border px-4 py-2 rounded">
+                        <input type="text" name="venue" required placeholder="Venue" class="border px-4 py-2 rounded">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <input type="datetime-local" name="startDateTime" required placeholder="Start Date & Time"
+                            class="border px-4 py-2 rounded">
+                        <input type="datetime-local" name="endDateTime" required placeholder="End Date & Time"
+                            class="border px-4 py-2 rounded">
+                    </div>
+                    <div class="mb-4">
+                        <input type="number" name="price" placeholder="Price" class="border px-4 py-2 rounded w-full">
+                    </div>
+                    <div class="mb-4">
+                        <input type="url" name="imageUrl" placeholder="Image URL"
+                            class="border px-4 py-2 rounded w-full">
+                    </div>
+                    <div class="mb-4">
+                        <textarea name="description" rows="4" placeholder="Event Description"
+                            class="border px-4 py-2 rounded w-full"></textarea>
+                    </div>
+                    <button type="submit" class="bg-primary text-white px-6 py-2 rounded">Create Event</button>
+                </form>
+            </section>
+            <!-- List Events -->
+            <section>
+                <h3 class="text-xl font-semibold mb-4">Existing Events</h3>
+                <div id="admin-events-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- ...events will be rendered here via JS... -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Add Edit Modal -->
+    <div id="editModal" class="fixed inset-0 hidden flex items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white p-6 rounded shadow w-full max-w-md">
+            <h3 class="text-xl font-semibold mb-4">Edit Event</h3>
+            <form id="editEventForm">
+                <input type="hidden" name="id">
+                <div class="mb-4">
+                    <input type="text" name="name" required placeholder="Event Name" class="border px-4 py-2 rounded w-full">
+                </div>
+                <div class="mb-4">
+                    <input type="text" name="venue" required placeholder="Venue" class="border px-4 py-2 rounded w-full">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <input type="datetime-local" name="startDateTime" required placeholder="Start Date & Time" class="border px-4 py-2 rounded">
+                    <input type="datetime-local" name="endDateTime" required placeholder="End Date & Time" class="border px-4 py-2 rounded">
+                </div>
+                <div class="mb-4">
+                    <input type="number" name="price" placeholder="Price" class="border px-4 py-2 rounded w-full">
+                </div>
+                <div class="mb-4">
+                    <input type="url" name="imageUrl" placeholder="Image URL" class="border px-4 py-2 rounded w-full">
+                </div>
+                <div class="mb-4">
+                    <textarea name="description" rows="4" placeholder="Event Description" class="border px-4 py-2 rounded w-full"></textarea>
+                </div>
+                <div class="flex justify-end">
+                    <button type="button" id="cancelEdit" class="mr-2 px-4 py-2 rounded border">Cancel</button>
+                    <button type="submit" class="bg-primary text-white px-4 py-2 rounded">Update Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="scripts/events.js"></script>
+    <script>
+        // Handle Create Event Form submission
+        const createEventForm = document.getElementById('createEventForm');
+        createEventForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(createEventForm);
+            const eventData = Object.fromEntries(formData.entries());
+            if (eventData.price) eventData.price = parseFloat(eventData.price);
+            createEvent(eventData);
+            createEventForm.reset();
+            setTimeout(fetchAdminEvents, 1000);
+        });
+        // Render admin events with Edit and Delete operations
+        function fetchAdminEvents() {
+            fetch(`${baseUrl}/api/events`)
+                .then(response => response.json())
+                .then(events => {
+                    const container = document.getElementById('admin-events-container');
+                    container.innerHTML = events.map(event => `
+						<div class="bg-white p-4 rounded shadow">
+							<h4 class="font-bold mb-2">${event.name}</h4>
+							<p class="mb-2 text-sm">${new Date(event.startDateTime).toLocaleString()} - ${new Date(event.endDateTime).toLocaleString()}</p>
+							<p class="mb-2 text-sm">${event.venue}</p>
+							<p class="mb-2 text-sm">${event.price ? '$' + event.price : 'Free'}</p>
+							<div class="flex space-x-2">
+								<button onclick='handleEdit(${JSON.stringify(event)})' class="bg-blue-500 text-white px-3 py-1 rounded">Edit</button>
+								<button onclick="deleteEvent(${event.id}); fetchAdminEvents();" class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
+							</div>
+						</div>
+					`).join('');
+                });
+        }
+        // Replace previous handleEdit implementation with modal-based editing
+        function handleEdit(eventData) {
+            const editModal = document.getElementById('editModal');
+            const editForm = document.getElementById('editEventForm');
+            // Prefill form fields with current event data
+            editForm.id.value = eventData.id;
+            editForm.name.value = eventData.name;
+            editForm.venue.value = eventData.venue;
+            // Convert datetime to 'YYYY-MM-DDTHH:MM' format for datetime-local inputs
+            const formatDateTime = dt => {
+                const d = new Date(dt);
+                const pad = n => n.toString().padStart(2, '0');
+                return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+            };
+            editForm.startDateTime.value = formatDateTime(eventData.startDateTime);
+            editForm.endDateTime.value = formatDateTime(eventData.endDateTime);
+            editForm.price.value = eventData.price || '';
+            editForm.imageUrl.value = eventData.imageUrl;
+            editForm.description.value = eventData.description;
+            editModal.classList.remove('hidden');
+        }
+        // Handle Edit form submission
+        const editEventForm = document.getElementById('editEventForm');
+        editEventForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(editEventForm);
+            const updatedData = Object.fromEntries(formData.entries());
+            if (updatedData.price) updatedData.price = parseFloat(updatedData.price);
+            updateEvent(updatedData.id, updatedData);
+            document.getElementById('editModal').classList.add('hidden');
+            setTimeout(fetchAdminEvents, 1000);
+        });
+        // Cancel edit and hide modal
+        document.getElementById('cancelEdit').addEventListener('click', function() {
+            document.getElementById('editModal').classList.add('hidden');
+        });
+        document.addEventListener('DOMContentLoaded', fetchAdminEvents);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Your Tickets.lk</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        // Tailwind CSS configuration, same as index.html
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F74500', // Orange color for primary actions
+                        secondary: '#1F2937' // Dark gray for text and secondary elements
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px' // Specific border radius for buttons
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .about-hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1200x600/333333/FFFFFF?text=Our+Journey') no-repeat center center;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-primary text-2xl font-bold">
+                <span class="text-primary font-pacifico">your tickets.lk</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="events.html" class="text-gray-700 hover:text-primary transition-colors">Events</a>
+                <a href="about.html" class="text-primary font-semibold transition-colors">About</a>
+                <a href="auth.html"
+                    class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">Login
+                    / Register</a>
+            </nav>
+            <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                <button id="mobileMenuButton" class="text-gray-700 hover:text-primary">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero-section min-h-[450px] flex items-center pt-24 pb-12 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">About Your Tickets.lk</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Discover the story behind Sri Lanka's premier
+                    online ticket booking platform.</p>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <h2 class="text-3xl font-bold mb-6 text-secondary">Our Journey & Mission</h2>
+                        <p class="text-gray-700 mb-4 text-lg leading-relaxed">
+                            Founded in 2020, Your Tickets.lk was born from a passion for live events and a desire to
+                            simplify the ticketing experience in Sri Lanka. We saw an opportunity to connect people with
+                            the vibrant entertainment scene across the country, making it easier than ever to discover
+                            and attend unforgettable moments.
+                        </p>
+                        <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                            Our mission is to make ticket booking <strong class="text-primary">seamless, secure, and
+                                accessible</strong> to everyone. We strive to provide a user-friendly platform where you
+                            can effortlessly browse, select, and purchase tickets for a diverse range of events – from
+                            electrifying concerts and captivating theater shows to thrilling sports matches and
+                            insightful workshops.
+                        </p>
+                        <a href="index.html#events"
+                            class="inline-block bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors text-lg">Explore
+                            Events</a>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <img src="https://placehold.co/600x450/F74500/FFFFFF?text=Our+Vision"
+                            alt="Our Vision at Your Tickets.lk" class="w-full h-auto rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl font-bold mb-4 text-secondary">Why Choose Your Tickets.lk?</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg">We are dedicated to providing you with the best
+                        ticket booking experience, focusing on convenience, reliability, and exceptional value.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div
+                        class="bg-gray-50 p-8 rounded-lg text-center shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div
+                            class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-6">
+                            <i class="ri-shield-check-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-secondary">Secure Payments</h3>
+                        <p class="text-gray-600">Your transactions are protected with industry-standard encryption and
+                            security protocols.</p>
+                    </div>
+                    <div
+                        class="bg-gray-50 p-8 rounded-lg text-center shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div
+                            class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-6">
+                            <i class="ri-customer-service-2-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-secondary">24/7 Support</h3>
+                        <p class="text-gray-600">Our dedicated customer support team is available round the clock to
+                            assist you with any queries.</p>
+                    </div>
+                    <div
+                        class="bg-gray-50 p-8 rounded-lg text-center shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div
+                            class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-6">
+                            <i class="ri-mail-check-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-secondary">Instant Confirmation</h3>
+                        <p class="text-gray-600">Receive your e-tickets instantly in your email after booking
+                            confirmation.</p>
+                    </div>
+                    <div
+                        class="bg-gray-50 p-8 rounded-lg text-center shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div
+                            class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-6">
+                            <i class="ri-price-tag-3-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-secondary">Best Price Guarantee</h3>
+                        <p class="text-gray-600">We offer competitive pricing with no hidden fees, ensuring you get the
+                            best value.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 bg-primary text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl font-bold mb-4">Our Impact So Far</h2>
+                    <p class="text-gray-200 max-w-2xl mx-auto text-lg">We're proud of what we've achieved and the
+                        community we're building.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <h3 class="text-4xl font-bold mb-2">500+</h3>
+                        <p class="text-gray-200 text-lg">Events Monthly</p>
+                    </div>
+                    <div>
+                        <h3 class="text-4xl font-bold mb-2">100,000+</h3>
+                        <p class="text-gray-200 text-lg">Happy Customers</p>
+                    </div>
+                    <div>
+                        <h3 class="text-4xl font-bold mb-2">50+</h3>
+                        <p class="text-gray-200 text-lg">Venue Partners</p>
+                    </div>
+                    <div>
+                        <h3 class="text-4xl font-bold mb-2">Top Rated</h3>
+                        <p class="text-gray-200 text-lg">Platform in Sri Lanka</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <p class="text-xl text-gray-100">Join our growing community of event enthusiasts!</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6"><span class="font-pacifico">Your Tickets.lk</span></h3>
+                    <p class="text-gray-400 mb-6">Your one-stop destination for booking tickets to the best events in
+                        Sri Lanka.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-facebook-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-twitter-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-line ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-linkedin-fill ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="index.html#events"
+                                class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li><a href="index.html#contact"
+                                class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Event Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Concerts & Music</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Theater & Arts</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sports</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Festivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Workshops</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Exhibitions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Subscribe</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with the latest events and exclusive offers.</p>
+                    <form id="subscribeFormFooter">
+                        <div class="flex mb-4">
+                            <input type="email" id="subscribeEmailFooter" placeholder="Your email address"
+                                class="w-full px-4 py-3 bg-gray-800 border-none text-white rounded-l focus:outline-none focus:ring-2 focus:ring-primary"
+                                required>
+                            <button type="submit"
+                                class="bg-primary text-white px-4 py-3 rounded-r hover:bg-opacity-90 transition-colors whitespace-nowrap">Subscribe</button>
+                        </div>
+                    </form>
+                    <div id="subscribeMessageFooter" class="text-sm mt-2"></div>
+                    <div>
+                        <h4 class="text-lg font-semibold mt-6 mb-3">We Accept</h4>
+                        <div class="flex space-x-3">
+                            <div class="w-10 h-6 flex items-center justify-center bg-white rounded">
+                                <i class="ri-visa-fill text-blue-700 ri-lg"></i>
+                            </div>
+                            <div class="w-10 h-6 flex items-center justify-center bg-white rounded">
+                                <i class="ri-mastercard-fill text-red-500 ri-lg"></i>
+                            </div>
+                            <div class="w-10 h-6 flex items-center justify-center bg-white rounded">
+                                <i class="ri-paypal-fill text-blue-500 ri-lg"></i>
+                            </div>
+                            <div class="w-10 h-6 flex items-center justify-center bg-white rounded">
+                                <i class="ri-apple-fill text-gray-800 ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; <span id="currentYear"></span> Your Tickets.lk.
+                        All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of
+                            Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Refund Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
