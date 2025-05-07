@@ -22,62 +22,158 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="bg-gray-100 font-inter">
-    <div class="flex min-h-screen">
-        <!-- Sidebar -->
-        <aside class="w-64 bg-white shadow-md">
-            <div class="p-6">
-                <h1 class="text-2xl font-bold text-primary">Admin Panel</h1>
+<div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md">
+        <div class="p-6">
+            <h1 class="text-2xl font-bold text-primary">Admin Panel</h1>
+        </div>
+        <nav class="mt-10">
+            <a href="dashboard-admin.html"
+               class="block py-2.5 px-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
+                <i class="ri-dashboard-line inline mr-2"></i> Dashboard
+            </a>
+            <a href="event-admin.html"
+               class="block py-2.5 px-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
+                <i class="ri-calendar-line inline mr-2"></i> Events
+            </a>
+            <a href="#"
+               class="block py-2.5 px-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
+                <i class="ri-user-line inline mr-2"></i> Users
+            </a>
+            <a href="#"
+               class="block py-2.5 px-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
+                <i class="ri-settings-3-line inline mr-2"></i> Tickets
+            </a>
+            <!-- Logout button -->
+            <a href="index.html"
+               class="block py-2.5 px-4 mt-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
+                <i class="ri-logout-box-line inline mr-2"></i> Logout
+            </a>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 p-10">
+        <header class="mb-8">
+            <h2 class="text-3xl font-bold text-secondary">Dashboard</h2>
+        </header>
+        <section>
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-6 bg-white rounded shadow">
+                    <h3 class="text-xl font-semibold mb-2">Total Users</h3>
+                    <p class="text-3xl text-primary">1,234</p>
+                </div>
+                <div class="p-6 bg-white rounded shadow">
+                    <h3 class="text-xl font-semibold mb-2">Total Events</h3>
+                    <p class="text-3xl text-primary">56</p>
+                </div>
+                <div class="p-6 bg-white rounded shadow">
+                    <h3 class="text-xl font-semibold mb-2">Total Bookings</h3>
+                    <p class="text-3xl text-primary">2,457</p>
+                </div>
+                <div class="p-6 bg-white rounded shadow">
+                    <h3 class="text-xl font-semibold mb-2">Active Users</h3>
+                    <p class="text-3xl text-primary">312</p>
+                </div>
             </div>
-            <nav class="mt-10">
-                <a href="dashboard-admin.html"
-                    class="block py-2.5 px-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
-                    <i class="ri-dashboard-line inline mr-2"></i> Dashboard
-                </a>
-                <a href="event-admin.html"
-                    class="block py-2.5 px-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
-                    <i class="ri-calendar-line inline mr-2"></i> Events
-                </a>
-                <a href="#"
-                    class="block py-2.5 px-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
-                    <i class="ri-user-line inline mr-2"></i> Users
-                </a>
-                <a href="#"
-                    class="block py-2.5 px-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
-                    <i class="ri-settings-3-line inline mr-2"></i> Tickets
-                </a>
-                <!-- Logout button -->
-                <a href="index.html"
-                    class="block py-2.5 px-4 mt-4 rounded transition duration-200 hover:bg-primary hover:text-white text-gray-700">
-                    <i class="ri-logout-box-line inline mr-2"></i> Logout
-                </a>
-            </nav>
-        </aside>
-        <!-- Main Content -->
-        <main class="flex-1 p-10">
-            <header class="mb-8">
-                <h2 class="text-3xl font-bold text-secondary">Dashboard</h2>
-            </header>
-            <section>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="p-6 bg-white rounded shadow">
-                        <h3 class="text-xl font-semibold mb-2">Total Users</h3>
-                        <p class="text-3xl text-primary">1,234</p>
-                    </div>
-                    <div class="p-6 bg-white rounded shadow">
-                        <h3 class="text-xl font-semibold mb-2">Total Events</h3>
-                        <p class="text-3xl text-primary">56</p>
-                    </div>
+
+            <!-- Event Categories and Booking Over Time -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
+                <!-- Event Categories Pie Chart -->
+                <div class="p-8 bg-white rounded shadow">
+                    <h3 class="text-xl font-semibold mb-4">Event Categories</h3>
+                    <canvas id="categoryChart" class="w-128 h-64 mx-auto"></canvas>
+
                 </div>
+
+                <!-- Booking Over Time Line Graph -->
+                <div class="p-8 bg-white rounded shadow">
+                    <h3 class="text-xl font-semibold mb-4">Booking Over Time</h3>
+                    <canvas id="bookingChart" class="w-128 h-64 mx-auto"></canvas>
+                </div>
+
+                <!-- Upcoming Events -->
                 <div class="mt-8 p-6 bg-white rounded shadow">
-                    <h3 class="text-xl font-semibold mb-4">Recent Activity</h3>
-                    <p class="text-gray-600">No recent activity.</p>
+                    <h3 class="text-xl font-semibold mb-4">Upcoming Events</h3>
+                    <ul class="text-gray-700 list-disc list-inside">
+                        <li>Live Music Night – May 10</li>
+                        <li>Comedy Show – May 12</li>
+                        <li>Food Festival – May 14</li>
+                        <li>Startup Meetup – May 18</li>
+                    </ul>
                 </div>
-            </section>
-        </main>
-    </div>
+
+            </div>
+        </section>
+    </main>
+</div>
+
+<script>
+    // Event Categories Pie Chart
+    const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+    new Chart(categoryCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Music', 'Comedy', 'Technology', 'Food'],
+            datasets: [{
+                label: 'Event Categories',
+                data: [25, 10, 8, 13],
+                backgroundColor: [
+                    '#F74500',
+                    '#FF9F40',
+                    '#4BC0C0',
+                    '#36A2EB'
+                ],
+                borderColor: '#ffffff',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'right',
+                },
+                title: {
+                    display: false
+                }
+            }
+        }
+    });
+
+    // Booking Over Time Line Graph
+    const bookingCtx = document.getElementById('bookingChart').getContext('2d');
+    new Chart(bookingCtx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+            datasets: [{
+                label: 'Bookings',
+                data: [120, 200, 150, 220, 300],
+                fill: false,
+                borderColor: '#F74500',
+                tension: 0.2,
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: false
+                }
+            }
+        }
+    });
+</script>
 </body>
 
 </html>
