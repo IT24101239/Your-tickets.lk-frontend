@@ -94,7 +94,7 @@
                 <!-- Booking Over Time Line Graph -->
                 <div class="p-8 bg-white rounded shadow">
                     <h3 class="text-xl font-semibold mb-4">Booking Over Time</h3>
-                    <canvas id="bookingChart" class="w-128 h-64 mx-auto"></canvas>
+                    <canvas id="bookingChart" class="w-96 h-64 mx-auto"></canvas>
                 </div>
 
                 <!-- Upcoming Events -->
@@ -107,6 +107,17 @@
                         <li>Startup Meetup – May 18</li>
                     </ul>
                 </div>
+
+                <!-- Top Booked Events with Medals -->
+                <div class="mt-8 p-6 bg-white rounded shadow">
+                    <h3 class="text-xl font-semibold mb-4">Top Booked Events</h3>
+                    <ol class="list-inside text-gray-700 space-y-2">
+                        <li><span class="text-2xl">🥇</span> <span class="font-medium text-primary">Live Music Night</span> – 852 bookings</li>
+                        <li><span class="text-2xl">🥈</span> <span class="font-medium text-primary">Comedy Show</span> – 624 bookings</li>
+                        <li><span class="text-2xl">🥉</span> <span class="font-medium text-primary">Food Festival</span> – 489 bookings</li>
+                    </ol>
+                </div>
+
 
             </div>
         </section>
@@ -173,6 +184,7 @@
             }
         }
     });
+
 </script>
 </body>
 
